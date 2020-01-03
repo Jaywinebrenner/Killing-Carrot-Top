@@ -1,3 +1,21 @@
+class NewGame
+  def self.initialize
+    puts ""
+    puts "Spawned from the fetid and pestulent comedy clubs from the dark edges of civilization, you embark on your journey to exact revenge upon this foul world from which you suffered so."
+    puts ""
+    puts "Your singular journey is to infiltrate the elite comedy circuit of the Illuimiati of Laughter- a sinisiter coalition of comedians hell bent on the vile enslavement of the human race and world dominance."
+    puts ""
+    puts "You must assassinate the Ultimate Comedy Beast, Lord of Laughter, King of Chuckles, the Baron of Belly Busting Carrot Top himself. It will be a perilous journey filled with violence, mayhem, depravity and suffering."
+    puts ""
+    puts ""
+    puts "What is your name, chosen one?"
+    puts ""
+    user_input_name = gets.chomp
+    puts "We wish you the best of luck as you sink deeper within the quagmire of comedy, " + user_input_name
+  end
+end
+
+
 class Player
   def initialize (name, health, damage)
     @name = name
@@ -5,8 +23,17 @@ class Player
     @damage = damage
   end
 
+  # lets you call to find out the information
   def name
     @name
+  end
+
+  def health
+    @health
+  end
+
+  def damage
+    @damage
   end
 
   def to_s
@@ -25,16 +52,17 @@ class Player
   def dead?
     @health <= 0
   end
+end
 
-  def players_died
-    if dead? == true
-      dead_messages = ["You fall down, blood gurgling out of your sinuses... your vision goes black. You have died.", "You emit a horrifying shreik and crumple to the ground. You have died.", "Your hear a strange crushing as time slows down. You feel your eyes liquifying and your innards spill onto the ground. You have died.", "A sharp pain shoots through your neck as a thick stream of blood squirts on the floor. Your Carotid artry has been severed. You have died.", "In an unusual moment of clarity in the heat of battle, times slows to a halt. Shrek lumbers into your field of vision. I am real and you have died."]
-      puts dead_messages.sample
-      puts ""
-      puts "Your quest to slay Carrot Top, Lord of Laughter has failed."
-    end
+def players_died
+  if dead? == true
+    dead_messages = ["You fall down, blood gurgling out of your sinuses... your vision goes black. You have died.", "You emit a horrifying shreik and crumple to the ground. You have died.", "Your hear a strange crushing sound, like eating cereal. You feel your eyes liquifying and your innards spill onto the ground. You have died.", "A sharp pain shoots through your neck as a thick stream of blood squirts on the floor. Your Carotid artry has been severed. You have died.", "In an unusual moment of clarity in the heat of battle, times slows to a halt. Shrek lumbers into your field of vision. 'I am real' he says and you have died."]
+    puts dead_messages.sample
+    puts ""
+    puts "Your quest to slay Carrot Top, Lord of Laughter has failed."
   end
 end
+
 
 
 class Enemy
@@ -60,49 +88,36 @@ end
 
 
 
-class NewGame
-  def self.initialize
-    puts ""
-    puts "Spawned from the fetid and pestulent comedy clubs from the dark edges of civilization, you embark on your journey to exact revenge upon this foul world from which you suffered so."
-    puts ""
-    puts "Your singular journey is to infiltrate the elite comedy circuit of the Illuimiati of Laughter- a sinisiter coalition of comedians hell bend on world dominance."
-    puts ""
-    puts "You must assassinate the Ultimate Comedy Beast, Lord of Laughter, King of Chuckles, the Baron of Belly Busting, Carrot Top himself. It will be a perilous journey filled with violence, mayhem, depravity and sinister laughs."
-    puts ""
-    puts ""
-    puts "What is your name, chosen one?"
-    puts ""
-    user_input_name = gets.chomp
-    puts "We wish you the best of luck as you sink deeper within the quagmire of comedy, " + user_input_name
-  end
-end
-
-
 
 class Battle
-  def initialize
-    @player_turn = player_turn
+
+  def player_attack
+      puts "the player attacks"
+  end
+
+  def enemy_attack
+    puts "the enemy attacks"
   end
 
   def self.initiative
     roll = rand(1..20)
     if roll > 10
       puts "Ohh, you are very agile and attack first..."
-      @player_turn = true
+      player_attack()
     else
       puts "Your foe has gotten best of you and attacks first.."
-      @player_turn = false
+      enemy_attack()
     end
   end
 
-  def player_attack
-    if @player_turn = true
-    end
-  end
 end
-  player = Player.new("Dangle", 20, 5)
-  goblin = Enemy.new("Goblin", 10, 2)
-  goblin.attack(player)
 
-  battle = Battle.initiative
-  newGame = NewGame.initialize
+newGame = NewGame.initialize
+battle = Battle.new
+
+player = Player.new("Dangle", 20, 5)
+goblin = Enemy.new("Goblin", 10, 2)
+
+goblin.attack(player)
+player.attack(goblin)
+battle = Battle.initiative
