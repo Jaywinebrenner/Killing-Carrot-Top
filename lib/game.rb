@@ -1,17 +1,40 @@
+
+
 class NewGame
   def self.initialize
+    puts " __   .__.__  .__  .__                      "
+    puts "|  | _|__|  | |  | |__| ____    ____        "
+    puts "|  |/ /  |  | |  | |  |/    \  / ___\       "
+    puts "|    <|  |  |_|  |_|  |   |  \/ /_/  >      "
+    puts "|__|_ \__|____/____/__|___|  /\___  /       "
+    puts "     \/                    \//_____/        "
+    puts "_________                             __    "
+    puts "\_   ___ \_____ ______________  _____/  |_  "
+    puts "/    \  \/\__  \\_  __ \_  __ \/  _ \   __\ "
+    puts "\     \____/ __ \|  | \/|  | \(  <_> )  |   "
+    puts " \______  (____  /__|   |__|   \____/|__|   "
+    puts "        \/     \/                           "
+    puts "___________                                 "
+    puts "\__    ___/___ ______                       "
+    puts "  |    | /  _ \\____ \                      "
+    puts "  |    |(  <_> )  |_> >                     "
+    puts "  |____| \____/|   __/                      "
+    puts "               |__|                        "
+    puts ""
     puts ""
     puts "Spawned from the fetid and pestulent comedy clubs from the dark edges of civilization, you embark on your journey to exact revenge upon this foul world from which you suffered so."
     puts ""
-    puts "Your singular journey is to infiltrate the elite comedy circuit of the Illuimiati of Laughter- a sinisiter coalition of comedians hell bent on the vile enslavement of the human race and world dominance."
+    puts "Your singular journey is to infiltrate the elite comedy circuit of the Illuimiati of Laughter- a sinisiter coalition of comedians hell bent on the enslavement of the human race, world dominance and crushing the dignity of the human spirit."
     puts ""
-    puts "You must assassinate the Ultimate Comedy Beast, Lord of Laughter, King of Chuckles, the Baron of Belly Busting Carrot Top himself. It will be a perilous journey filled with violence, mayhem, depravity and suffering."
+    puts "You must assassinate the Ultimate Comedy Beast, Lord of Laughter, King of Chuckles, the Baron of Belly Busting himself - Carrot Top. It will be a perilous journey filled with violence, mayhem, depravity and suffering."
     puts ""
     puts ""
     puts "What is your name, chosen one?"
     puts ""
     user_input_name = gets.chomp
-    puts "We wish you the best of luck as you sink deeper within the quagmire of comedy, " + user_input_name
+    puts ""
+    puts "We wish you the best of luck, " + user_input_name + " the Comedian Slayer as you sink deep within this vile quagmire of comedy."
+    puts ""
   end
 end
 
@@ -24,9 +47,9 @@ class Player
     @damage = damage
   end
 
-  def to_s
-    puts "#{name}, the Comedian Slayer. Health: #{health}, Attack Damage: #{power}"
-  end
+  # def to_s
+  #   puts "#{name}, the Comedian Slayer. Health: #{health}, Attack Damage: #{power}"
+  # end
 
   def do_damage(damage)
     @health -= @damage
@@ -52,7 +75,6 @@ def players_died
 end
 
 
-
 class Enemy
   attr_accessor :name, :health, :damage
   def initialize (name, health, damage)
@@ -74,8 +96,6 @@ class Enemy
     @health <= 0
   end
 end
-
-
 
 
 class Battle
@@ -101,12 +121,57 @@ class Battle
 
 end
 
+class Locations
+  def alley
+    puts "You have traversed the sprawling metropolis of Laughlandia for weeks on end and have successfully found the elusive Prop Tower where the inner sanctum of the Illuminati of Laughter resides."
+    puts ""
+    puts "It is an imposing structure with life-like statues of blood thristy comedians looming from the tresses like maniacal gargoyles."
+    puts "As you approach, the bellowing voice of Tim Allen echos throughout the street. 'Welcome Comedian Slayer. To gain access to Prop Tower, you must answer 3 questions about my celebrated sitcom Home Improvement.'"
+    puts ""
+    puts "'What was the name of the celebrated actor who portrayed my middle child Randy on my hit series Home Improvement?'"
+    answer_one = gets.chomp
+    if answer_one.upcase == "JONATHAN TAYLOR THOMAS" || answer_one.upcase == "JONATHAN THOMAS"
+      puts "You are correct Comedian Slayer."
+    else
+      damage = rand(1..4)
+      puts "'WRONG!' bellows the disembodied voice of Tim Allen as several hissing measuring tapes materialize out of thin air and whip you in the face for #{damage} hit points of damage."
+    end
+    puts ""
+    puts "'What was the name of my characters ficticious television show?'"
+    answer_two = gets.chomp
+    if answer_two.upcase == "TOOL TIME" || answer_two.upcase == "TOOLTIME"
+      puts "You are correct Comedian Slayer."
+    else
+      damage = rand(1..4)
+      puts "'WRONG!' bellows the disembodied voice of Tim Allen as several drill bits materialize out of thin air and strike you in the chest for #{damage} hit points of damage."
+    end
+    puts ""
+    puts "'Which season did celebrated comedian Jay Leno make a cameo?''"
+    answer3 = gets.chomp
+    if answer_three.upcase == "FOUR" || answer_three.upcase == "SEASON FOUR" || answer_three.upcase == "4" || answer_three.upcase == "SEASON 4"
+      puts "You are correct Comedian Slayer."
+    else
+      damage = rand(1..4)
+      puts "'WRONG!' bellows the disembodied voice of Tim Allen as several vice grips materialize out of thin air and clamp down on your soft flesh for #{damage} hit points of damage."
+    end
+    puts "And thus you have passed my test. You may proceed into Prop Tower."
+  end
+
+  def lobby
+
+  end
+
+end
+
+
+
+
 newGame = NewGame.initialize
 battle = Battle.new
 
 player = Player.new("Dangle", 20, 5)
-goblin = Enemy.new("Goblin", 10, 2)
+gallagher = Enemy.new("Gallagher", 10, 2)
 
-goblin.attack(player)
-player.attack(goblin)
-battle = Battle.initiative
+# gallagher.attack(player)
+# player.attack(gallagher)
+# battle = Battle.initiative

@@ -2,11 +2,13 @@
 # require ('rspec')
 require ('./lib/game')
 
+
+
 resume = true
 while (resume)
-  puts("Get you prime, bro xanaxxx")
+  puts("Welcome to The Lord of Laughs. Would you like to play?")
   input = gets.chomp
-  prime1 = Primer.new(input.to_i)
+  # newGame = NewGame.initialize
 
   puts(prime1.function_dude)
   puts("Would you like to do this again sometime? Y/N")
