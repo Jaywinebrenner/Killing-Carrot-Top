@@ -17,23 +17,11 @@ end
 
 
 class Player
+  attr_accessor :name, :health, :damage
   def initialize (name, health, damage)
     @name = name
     @health = health
     @damage = damage
-  end
-
-  # lets you call to find out the information
-  def name
-    @name
-  end
-
-  def health
-    @health
-  end
-
-  def damage
-    @damage
   end
 
   def to_s
@@ -66,6 +54,7 @@ end
 
 
 class Enemy
+  attr_accessor :name, :health, :damage
   def initialize (name, health, damage)
     @name = name
     @health = health
