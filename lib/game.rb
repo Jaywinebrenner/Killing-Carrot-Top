@@ -2,6 +2,7 @@
 
 class NewGame
   def self.initialize
+    puts ""
     puts " __   .__.__  .__  .__                      "
     puts "|  | _|__|  | |  | |__| ____    ____        "
     puts "|  |/ /  |  | |  | |  |/    \  / ___\       "
@@ -26,7 +27,7 @@ class NewGame
     puts ""
     puts "Your singular journey is to infiltrate the elite comedy circuit of the Illuimiati of Laughter- a sinisiter coalition of comedians hell bent on the enslavement of the human race, world dominance and crushing the dignity of the human spirit."
     puts ""
-    puts "You must assassinate the Ultimate Comedy Beast, Lord of Laughter, King of Chuckles, the Baron of Belly Busting himself - Carrot Top. It will be a perilous journey filled with violence, mayhem, depravity and suffering."
+    puts "You must assassinate the Ultimate Comedy Beast, Lord of Laughter, King of the Cutups, the Baron of Belly Busting himself - Carrot Top. It will be a perilous journey filled with violence, mayhem, depravity and suffering."
     puts ""
     puts ""
     puts "What is your name, chosen one?"
@@ -65,6 +66,7 @@ class Player
   end
 end
 
+# make this a method of the player class?
 def players_died
   if dead? == true
     dead_messages = ["You fall down, blood gurgling out of your sinuses... your vision goes black. You have died.", "You emit a horrifying shreik and crumple to the ground. You have died.", "Your hear a strange crushing sound, like eating cereal. You feel your eyes liquifying and your innards spill onto the ground. You have died.", "A sharp pain shoots through your neck as a thick stream of blood squirts on the floor. Your Carotid artry has been severed. You have died.", "In an unusual moment of clarity in the heat of battle, times slows to a halt. Shrek lumbers into your field of vision. 'I am real' he says and you have died."]
@@ -122,7 +124,7 @@ class Battle
 end
 
 class Locations
-  def alley
+  def tim_allens_spectre
     puts "You have traversed the sprawling metropolis of Laughlandia for weeks on end and have successfully found the elusive Prop Tower where the inner sanctum of the Illuminati of Laughter resides."
     puts ""
     puts "It is an imposing structure with life-like statues of blood thristy comedians looming from the tresses like maniacal gargoyles."
@@ -157,10 +159,17 @@ class Locations
     puts "And thus you have passed my test. You may proceed into Prop Tower."
   end
 
-  def lobby
-
+  def gallaghers_lair
   end
 
+  def jeff_foxworthys_den
+  end
+
+  def howie_mandells_dungeon
+  end
+
+  def judy_tenutas_coven
+end
 end
 
 
