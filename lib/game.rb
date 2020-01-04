@@ -176,6 +176,7 @@ class Locations
       jeff_foxworthys_den()
     else
       puts "Please enter the door you prefer to enter: 1, 2 or 3..."
+    end
   end
 
   def judy_tenutas_coven
