@@ -30,11 +30,11 @@ class NewGame
     puts "You must assassinate the Ultimate Comedy Beast, Lord of Laughter, King of the Cutups, the Baron of Belly Busting himself - Carrot Top. It will be a perilous journey filled with violence, mayhem, depravity and suffering."
     puts ""
     puts ""
-    puts "What is your name, chosen one?"
+    puts "What is your name, Comedian Slayer?"
     puts ""
     user_input_name = gets.chomp
     puts ""
-    puts "We wish you the best of luck, " + user_input_name + " the Comedian Slayer as you sink deep within this vile quagmire of comedy."
+    puts "We wish you the best of luck, " + user_input_name + " as you sink deep within this vile quagmire of comedy."
     puts ""
   end
 end
@@ -103,7 +103,7 @@ end
 class Battle
 
   def player_attack
-      puts "the player attacks"
+    puts "the player attacks"
   end
 
   def enemy_attack
@@ -128,9 +128,9 @@ class Locations
     puts "You have traversed the sprawling metropolis of Laughlandia for weeks on end and have successfully found the elusive Prop Tower where the inner sanctum of the Illuminati of Laughter resides."
     puts ""
     puts "It is an imposing structure with life-like statues of blood thristy comedians looming from the tresses like maniacal gargoyles."
-    puts "As you approach, the bellowing voice of Tim Allen echos throughout the street. 'Welcome Comedian Slayer. To gain access to Prop Tower, you must answer 3 questions about my celebrated sitcom Home Improvement.'"
+    puts "As you approach, the bellowing voice of Tim Allen echos throughout the street. 'Welcome Comedian Slayer. To gain access to Prop Tower, you must answer 3 questions about my celebrated situational comedy Home Improvement.'"
     puts ""
-    puts "'What was the name of the celebrated actor who portrayed my middle child Randy on my hit series Home Improvement?'"
+    puts "'What was the name of the revered child actor who portrayed my son Randy?'"
     answer_one = gets.chomp
     if answer_one.upcase == "JONATHAN TAYLOR THOMAS" || answer_one.upcase == "JONATHAN THOMAS"
       puts "You are correct Comedian Slayer."
@@ -145,11 +145,11 @@ class Locations
       puts "You are correct Comedian Slayer."
     else
       damage = rand(1..4)
-      puts "'WRONG!' bellows the disembodied voice of Tim Allen as several drill bits materialize out of thin air and strike you in the chest for #{damage} hit points of damage."
+      puts "'WRONG!' bellows the disembodied voice of Tim Allen as several Phillips-Head drill bits materialize out of thin air and strike you in the chest for #{damage} hit points of damage."
     end
     puts ""
     puts "'Which season did celebrated comedian Jay Leno make a cameo?''"
-    answer3 = gets.chomp
+    answer_three = gets.chomp
     if answer_three.upcase == "FOUR" || answer_three.upcase == "SEASON FOUR" || answer_three.upcase == "4" || answer_three.upcase == "SEASON 4"
       puts "You are correct Comedian Slayer."
     else
@@ -157,6 +157,28 @@ class Locations
       puts "'WRONG!' bellows the disembodied voice of Tim Allen as several vice grips materialize out of thin air and clamp down on your soft flesh for #{damage} hit points of damage."
     end
     puts "And thus you have passed my test. You may proceed into Prop Tower."
+    puts ""
+    puts "The iron wrought doors afixed with an ornate bas-relief depiction of Jimmy Durante creek open with the distant eerie sounds of 'Ha cha cha cha'"
+  end
+
+  def foyer
+    puts "You enter the vast foyer of Prop tower. The room is encapsulated in shadow and pain. You can feel the thick black blood of depravity hanging in the air. This is truely an unholy, otherworldly and vile place. You winch at the stench of sulfer and human waste. There is a large staircase which goes up to a landing containing three doors. Door number one is strangely ornate with various flower species carved into it's heavy wooden frame. The soft and unsettling sounds of what seems to be an accordian can be heard it the distance. Door Number two is crudely painted in an unsettling prison strip pattern and looks to have rotting watermelon rinds strewn about it's base. Door number three is smeared with a sticky tar like substance which reeks of diesel gasoline and casual bigotry."
+    puts ""
+    puts "Which door do you enter?"
+    puts "1, 2 or 3?"
+    puts ""
+    door_choice = gets.chomp
+    if door_choice == "1"
+      judy_tenutas_coven()
+    elsif door_choice == "2"
+      gallaghers_lair()
+    elsif door_choice == "3"
+      jeff_foxworthys_den()
+    else
+      puts "Please enter the door you prefer to enter: 1, 2 or 3..."
+  end
+
+  def judy_tenutas_coven
   end
 
   def gallaghers_lair
@@ -168,14 +190,15 @@ class Locations
   def howie_mandells_dungeon
   end
 
-  def judy_tenutas_coven
-end
+
 end
 
 
 
 
 newGame = NewGame.initialize
+beginingLocation = Locations.new
+beginingLocation.tim_allens_spectre
 battle = Battle.new
 
 player = Player.new("Dangle", 20, 5)
