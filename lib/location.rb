@@ -1,6 +1,9 @@
+class Location
+  def initialize (enemies)
+    @enemies = enemies
+  end
 
-class NewGame
-  def self.initialize
+  def intro
     puts ""
     puts " __   .__.__  .__  .__                      "
     puts "|  | _|__|  | |  | |__| ____    ____        "
@@ -28,103 +31,8 @@ class NewGame
     puts ""
     puts "You must assassinate the Ultimate Comedy Beast, Lord of Laughter, King of the Cutups, the Baron of Belly Busting himself - Carrot Top. It will be a perilous journey filled with violence, mayhem, depravity and suffering."
     puts ""
-    puts ""
-    puts "What is your name, Comedian Slayer?"
-    puts ""
-    user_input_name = gets.chomp
-    puts ""
-    puts "We wish you the best of luck, " + user_input_name + " as you sink deep within this vile quagmire of comedy."
-    puts ""
-  end
-end
-
-
-class Player
-  attr_accessor :name, :health, :damage
-  def initialize (name, health, damage)
-    @name = name
-    @health = health
-    @damage = damage
   end
 
-  # def to_s
-  #   puts "#{name}, the Comedian Slayer. Health: #{health}, Attack Damage: #{power}"
-  # end
-
-  def do_damage(damage)
-    @health -= @damage
-  end
-
-  def attack(target)
-    @damage = 5
-    target.do_damage(@damage)
-  end
-
-  def dead?
-    @health <= 0
-  end
-end
-
-# make this a method of the player class?
-def players_died
-  if dead? == true
-    dead_messages = ["You fall down, blood gurgling out of your sinuses... your vision goes black. You have died.", "You emit a horrifying shreik and crumple to the ground. You have died.", "Your hear a strange crushing sound, like eating cereal. You feel your eyes liquifying and your innards spill onto the ground. You have died.", "A sharp pain shoots through your neck as a thick stream of blood squirts on the floor. Your Carotid artry has been severed. You have died.", "In an unusual moment of clarity in the heat of battle, times slows to a halt. Shrek lumbers into your field of vision. 'I am real' he says and you have died."]
-    puts dead_messages.sample
-    puts ""
-    puts "Your quest to slay Carrot Top, Lord of Laughter has failed."
-  end
-end
-
-
-class Enemy
-  attr_accessor :name, :health, :damage
-  def initialize (name, health, damage)
-    @name = name
-    @health = health
-    @damage = damage
-  end
-
-  def do_damage(damage)
-    @health -= @damage
-  end
-
-  def attack(target)
-    @damage = 5
-    target.do_damage(@damage)
-  end
-
-  def dead?
-    @health <= 0
-  end
-end
-
-
-class Battle
-
-  def player_attack
-    puts "the player attacks"
-    player.attack(gallagher)
-  end
-
-  def enemy_attack
-    puts "the enemy attacks"
-    gallagher.attack(player)
-  end
-
-  def self.initiative
-    roll = rand(1..20)
-    if roll > 10
-      puts "Ohh, you are very agile and attack first..."
-      player_attack()
-    else
-      puts "Your foe has gotten best of you and attacks first.."
-      enemy_attack()
-    end
-  end
-
-end
-
-class Locations
   def tim_allens_spectre
     puts "You have traversed the sprawling metropolis of Laughlandia for weeks on end and have successfully found the elusive Prop Tower where the inner sanctum of the Illuminati of Laughter resides."
     puts ""
@@ -160,6 +68,8 @@ class Locations
     puts "And thus you have passed my test. You may proceed into Prop Tower."
     puts ""
     puts "The iron wrought doors afixed with an ornate bas-relief depiction of Jimmy Durante creek open with the distant eerie sounds of 'Ha cha cha cha'"
+    puts ""
+    foyer()
   end
 
   def foyer
@@ -177,11 +87,25 @@ class Locations
       jeff_foxworthys_den()
     else
       puts "Please enter the door you prefer to enter: 1, 2 or 3..."
-      foyer()
+
     end
   end
 
   def judy_tenutas_coven
+    puts "You gingerly make your way through a long windowless hallway as the sounds of what appears to be an accordian competently played gets louder and louder. As you approach an archway which leads to an open room shrouded in darkness, the sound abruptly stops. An upright sarcophagus stand perfectly in the room's center with bones strewn about it's base. The sudden void the accordian's syllabic tones leaves you uneasy. You get the feeling you are being watched."
+    puts "Do you: "
+    puts "1- Move forward to investigate the sarcophagus or "
+    puts "2 - Retreat back into the lobby."
+    answer = gets.chomp
+    if answer == "1"
+      puts "As you make your way towards the sarcophagus, an ear piercing shreik knifes your ears and the ominious bellows blast from an accordian. 'Helllllo, Comedian Slayer!' mocks a voice in the unmistakable affectation of famed 80s character comedian Judy Tenuta.
+      'Welcome to the Illuminati of Laughter, where you will die horribly soundtracked by my accordian tones!' Judy Tenuta blasts out of a pile of bones and hovers in the air. She omits a hysterical cackle and attacks!"
+    elsif answer == "2"
+      foyer()
+    else
+      puts "Please enter 1 to investigate the sarcophagus or 2 to go back to the foyer."
+    end
+
   end
 
   def gallaghers_lair
@@ -195,18 +119,3 @@ class Locations
 
 
 end
-
-
-
-
-newGame = NewGame.initialize
-beginingLocation = Locations.new
-beginingLocation.tim_allens_spectre
-battle = Battle.new
-
-player = Player.new("Dangle", 20, 5)
-gallagher = Enemy.new("Gallagher", 10, 2)
-
-# gallagher.attack(player)
-# player.attack(gallagher)
-# battle = Battle.initiative
