@@ -1,5 +1,4 @@
 
-
 class NewGame
   def self.initialize
     puts ""
@@ -104,10 +103,12 @@ class Battle
 
   def player_attack
     puts "the player attacks"
+    player.attack(gallagher)
   end
 
   def enemy_attack
     puts "the enemy attacks"
+    gallagher.attack(player)
   end
 
   def self.initiative
