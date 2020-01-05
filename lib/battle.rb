@@ -1,7 +1,9 @@
 class Battle
-  def initialize
-    @player = Player.new('Player', 10, rand(1..5))
-    @enemy = Enemy.new("Emo Phillips", 4, rand(1..5))
+  def initialize (player, enemy)
+    @player = player
+    @enemy = enemy
+    # @player = Player.new('Player', 10, rand(1..5))
+    # @enemy = Enemy.new("Emo Phillips", 4, rand(1..5))
     self.initiative()
   end
 

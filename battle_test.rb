@@ -1,8 +1,10 @@
 
 class Battle
-  def initialize
-    @player = Player.new('Player', 10, rand(1..5))
-    @enemy = Enemy.new("Emo Phillips", 4, rand(1..5))
+  def initialize (player, enemy)
+    @player = player
+    @enemy = enemy
+    # @player = Player.new('Player', 10, rand(1..5))
+    # @enemy = Enemy.new("Emo Phillips", 4, rand(1..5))
     self.initiative()
   end
 
@@ -106,11 +108,11 @@ class Player
   end
 end
 
-# emo_phillips = Enemy.new("Emo Phillips", 8, 3)
-# player = Player.new('Player', 25, 3)
+emo_phillips = Enemy.new("Emo Phillips", 8, 3)
+player = Player.new('Player', 25, 3)
 #
 # emo_phillips.attack(player)
 # player.attack(emo_phillips)
 
-battle = Battle.new
+battle = Battle.new(player, emo_phillips)
 initialize()

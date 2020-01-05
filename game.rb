@@ -59,14 +59,20 @@ class Game
       puts "4 - Take nothing"
       weapon = gets.chomp
       if weapon == "1"
-        puts "You admire the sheen on the butter knife and lick the edges adoringly."
         @player.damage = @player.damage + 3
+        puts "You admire the sheen on the butter knife and lick the edges adoringly."
+        puts ""
+        puts "You are now capable of inflicting #{@player.damage} hit points of damage on your foes."
       elsif weapon == "2"
-        puts "You examine the 2x4 and lick your lips."
         @player.damage = @player.damage + 4
+        puts "You examine the 2x4 and lick your lips."
+        puts ""
+        puts "You are now capable of inflicting #{@player.damage} hit points of damage on your foes."
       elsif weapon == "3"
+        @player.damage = @player.damage + 2
         puts "As you pick up the trash lid, you catch your refelction in the sheen of the metal. You are a broken soul. Perhaps this trash can lid will help mend it."
-        @player.damage = @player.damage + 1
+        puts ""
+        puts "You are now capable of inflicting #{@player.damage} hit points of damage on your foes."
       elsif weapon == "4"
         puts "You didn't grab a weapon and simply opt to battle the Illuimiati of Laughter with your fists."
       else
@@ -75,9 +81,21 @@ class Game
       puts ""
 
       puts "We wish you the best of luck, " + user_input_name + " as you sink deep within this vile quagmire of comedy."
-      puts ""
       @player.name = user_input_name
-      create_locations
+      puts ""
+      puts "Please enter '1' to continue."
+      continue = gets.chomp
+      puts ""
+      if continue == "1"
+        create_locations()
+      else
+        puts "You punch yourself in the face. A true Comedy Slayer must never rest on the laurels of indecision. In order to take down the Illuminati of Laughter, one must never sit idle."
+        puts ""
+        puts "You take 2 Hit Points of damage."
+        @player.health -= 2
+        puts "#{@player.health}"
+        create_locations()
+      end
     end
 
     def create_locations
