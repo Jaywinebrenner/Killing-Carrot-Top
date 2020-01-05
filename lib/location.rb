@@ -74,10 +74,10 @@ class Location
     puts ""
     puts "The iron wrought doors afixed with an ornate bas-relief depiction of Jimmy Durante creek open accompanied with the distant eerie sounds of 'Ha cha cha cha'"
     puts ""
-    movement = gets.chomp
     puts "Do you: "
     puts "1 - Continue through the iron wrought door into the belly of the Illuminati of Laughter"
     puts "2 -Traverse the outsides of the tower for an alternate entrance."
+    movement = gets.chomp
     if movement == "1"
       foyer()
     elsif movement == "2"

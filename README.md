@@ -20,6 +20,12 @@ A Ruby text-based RPG where you play as the Comedian Slayer, a lone warrior spaw
  4. Play the game. Proceed to kill Carrot Top.
 
 ### Specifications:
+Determine how to run tests
+Determine how to wire Rspec
+Determine how the spec_helper works
+Determine how to execute Battle
+Determine how to import players and enemies into create_locations
+Determine how to affect player state in location methods
 
 |Input|Output|
 |---|---|

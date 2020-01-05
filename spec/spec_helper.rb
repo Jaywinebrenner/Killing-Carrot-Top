@@ -16,3 +16,4 @@ require_relative "lib/location.rb"
 # require_relative "lib/locatins/location.data.rb"
 require_relative "lib/battle.rb"
 require_relative 'lib/intro.rb'
+require_relative '../game.rb'
