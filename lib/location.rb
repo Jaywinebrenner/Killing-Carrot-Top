@@ -4,7 +4,7 @@ class Location
   end
 
   def alley
-    puts "You have traversed the sprawling metropolis of Laughlandia for weeks on end and have successfully spotted the elusive Prop Tower where the inner sanctum of the Illuminati of Laughter resides. Slinking through garbage strewn alley ways, skillfully avoiding the army of Cybernetic Dane Cooks on partrol, you are greeted with the unusual smell of sauteed garlic clearly eminating from a ramshackled tent put together via rusted shopping carts and shredded blue tarps."
+    puts "You have traversed the sprawling metropolis of Laughlandia for weeks on end and have successfully spotted the elusive Prop Tower where the inner sanctum of the Illuminati of Laughter resides. Slinking through garbage strewn alley ways, skillfully avoiding the army of Cybernetic Dane Cooks on partrol, you are greeted with the unusual smell of sauteed garlic clearly eminating from a ramshackled tent strewn together via rusted shopping carts and shredded blue tarps."
     puts ""
     puts "Do you: "
     puts ""
@@ -50,7 +50,7 @@ class Location
     else
       damage = rand(1..4)
       puts "'WRONG!' bellows the disembodied voice of Tim Allen as several hissing measuring tapes materialize out of thin air and whip you in the face for #{damage} hit points of damage."
-      @player.health -= damage
+      # @player.health -= damage figure out how to affect stats
     end
     puts ""
     puts "'What was the name of my characters ficticious television show?'"
@@ -148,5 +148,7 @@ class Location
   def howie_mandells_dungeon
   end
 
+  def carrot_tops_throne_room
+  end
 
 end

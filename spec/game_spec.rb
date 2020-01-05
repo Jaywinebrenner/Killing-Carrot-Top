@@ -1,6 +1,6 @@
 require ('pry')
 require ('rspec')
-require ('game')
+require ('game.rb')
 
 describe Player do
   describe ".new" do

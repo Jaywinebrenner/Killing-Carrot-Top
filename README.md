@@ -4,7 +4,7 @@
 
 ### Description
 
-A Ruby text-based RPG. Spawned from the fetid and pestilent comedy clubs from the dark edges of civilization, you embark on your journey assassinate the Lord of Laughter, Carrot Top.
+A Ruby text-based RPG where you play as the Comedian Slayer, a lone warrior spawned from the fetid and pestilent comedy clubs from the dark edges of civilization. You embark on a perilous journey filled with violence, mayhem, depravity and suffering  as you attempt to assassinate the Lord of Laughter, King of the Cutups, the Baron of Belly Busting himself - Carrot Top.
 
 ### Setup/Installation Requirements
 
@@ -14,14 +14,15 @@ A Ruby text-based RPG. Spawned from the fetid and pestilent comedy clubs from th
 
  1. Click the link shown in the above photo and download the file.
  2. Navigate to the directory "Killing Carrot Top" and cd into it via your terminal.
- 3. Once inside the "Killing Carrot Top" directory, run type $ ruby lib/game.rb to run the game. 
+ 3. Once inside the "Killing Carrot Top" directory, run type
+ $ ruby game.rb
+   to run the game.
  4. Play the game. Proceed to kill Carrot Top.
 
 ### Specifications:
 
 |Input|Output|
 |---|---|
-|Player A rolls a 1| Turn over, Turn Total is 0, Total Score is 0, Player B's turn.|
 |---|---|
 |---|---|
 |---|---|
