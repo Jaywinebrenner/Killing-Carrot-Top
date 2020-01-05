@@ -1,3 +1,4 @@
+
 class Battle
   def initialize
     @player = Player.new('Player', 10, rand(1..5))
@@ -60,3 +61,56 @@ class Battle
     end
   end
 end
+
+class Enemy
+  attr_accessor :name, :health, :damage
+  def initialize (name, health, damage)
+    @name = name
+    @health = health
+    @damage = damage
+  end
+
+  def do_damage(damage)
+    @health -= @damage
+  end
+
+  def attack(target)
+    @damage = damage
+    target.do_damage(@damage)
+  end
+
+  def alive?
+    @health > 0
+  end
+end
+
+class Player
+  attr_accessor :name, :health, :damage
+  def initialize (name, health, damage)
+    @name = name
+    @health = health
+    @damage = damage
+  end
+
+  def do_damage(damage)
+    @health -= @damage
+  end
+
+  def attack(target)
+    @damage = damage
+    target.do_damage(@damage)
+  end
+
+  def alive?
+    @health > 0
+  end
+end
+
+# emo_phillips = Enemy.new("Emo Phillips", 8, 3)
+# player = Player.new('Player', 25, 3)
+#
+# emo_phillips.attack(player)
+# player.attack(emo_phillips)
+
+battle = Battle.new
+initialize()

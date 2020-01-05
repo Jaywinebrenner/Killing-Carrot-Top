@@ -12,11 +12,11 @@ class Enemy
   end
 
   def attack(target)
-    @damage = 5
+    @damage = damage
     target.do_damage(@damage)
   end
 
-  def dead?
-    @health <= 0
+  def alive?
+    @health > 0
   end
 end
