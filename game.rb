@@ -16,6 +16,7 @@ class Game
 
         @player = Player.new('Player', 25, 3)
         self.create_player
+        @emo_phillips = Enemy.new("Emo Phillips", 8, rand(1..5))
     end
 
     def create_player
@@ -99,7 +100,7 @@ class Game
     end
 
     def create_locations
-      Location.new(nil).alley
+      Location.new(@player, @emo_phillips).alley
         #for i in loop while whater:
         # Location.new(add enemies if you want)
         # then youll have x number of locaitons
@@ -112,7 +113,7 @@ class Game
 end
 
 # newGame = Intro.new
-emo_phillips = Enemy.new("Emo Phillips", 8, rand(1..5))
+# emo_phillips = Enemy.new("Emo Phillips", 8, rand(1..5))
 tim_allen = Enemy.new("Tim Allen", 10, rand(2..6))
 judy_tenuta = Enemy.new("Judy Tenuta", 12, rand(2..7))
 gallagher = Enemy.new("Gallagher", 12, rand(1..10))
@@ -120,9 +121,9 @@ jeff_foxworthy = Enemy.new("Jeff Foxworthy", 8, rand(1..5))
 howie_mandell = Enemy.new("Howie Mandell", 15, rand(2..8))
 carrot_top = Enemy.new("Carrot Top, Lord of Laughter", 25, rand(2..12))
 
-beginingLocation = Location.new(nil)
-
+beginingLocation = Location.new(nil, nil)
 game = Game.new.initialize
+battle = Battle.new(nil, nil)
 # battle = Battle.new
 
 # beginingLocation.tim_allens_spectre

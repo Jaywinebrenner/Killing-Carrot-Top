@@ -12,13 +12,13 @@ class Battle
     damage_range = rand(1..damage_range_variable)
     @player.attack(@enemy)
     puts "You charge and slash your foe directly in the face for #{damage_range} hit points of damage."
-    puts ""
-    puts "Your foe has been reduced to #{@enemy.health} hit points. God Speed, Comedian Slayer."
-    if @enemy.alive?
-      initiative()
-    else
+    if @enemy.alive? == false
       puts "You have laid waste to this vile creature. You stand triumphant. One step closer to the Lord of Laughter himself."
-      # determine how to call back into the current locations
+    end
+    puts ""
+    if @enemy.alive?
+      puts "Your foe has been reduced to #{@enemy.health} hit points. God Speed, Comedian Slayer."
+      initiative()
     end
   end
 
@@ -33,7 +33,7 @@ class Battle
       puts "The sky darkens to an unfathomable black as blood rains from the sky in thick torrents. Skeletal hands burst from the earth. The wailing of hungry children and screaming lambs trumpet from near to far. Humanities fate is doomed to enslavement via the Illuimiati of Laughter. They have won. They reign supreme over all of humanity. For you..."
       puts ""
       puts "have died."
-      # determine how to call back into the current locations
+      # determine how to end game
     end
   end
 
@@ -52,6 +52,7 @@ class Battle
       puts ""
       puts "Game Over"
       puts ""
+      prints "ruby game.rb"
     elsif initiative_answer == "1"
       if roll > 10
         puts "You are quick on your feet and attack first..."

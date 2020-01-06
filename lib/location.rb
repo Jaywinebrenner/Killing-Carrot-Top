@@ -1,6 +1,8 @@
 class Location
-  def initialize (enemies)
-    @enemies = enemies
+  def initialize (player, enemy)
+    @player = player
+    @enemy = enemy
+    @emo_phillips = Enemy.new("Emo Phillips", 4, rand(1..5))
   end
 
   def alley
@@ -8,27 +10,36 @@ class Location
     puts ""
     puts "Do you: "
     puts ""
-    puts "1 - Continue towards Prop Tower"
+    puts "1 - Quietly slink by the ramshacked tent and continue forth to Prop Tower"
     puts "2 - Carefully approach the tent and sumptuous smells"
-    puts "3 - Hide behind a nearby dumpster to survey the tent"
+    puts "3 - Say, 'Is anyone there?'"
+    puts "4 - Hide behind a nearby dumpster to survey the tent"
     puts ""
     answer = gets.chomp
     if answer == "1"
       puts "You deem it unwise to investigate the lovely smells despite your rumbling stomach. You continue towards your desintation."
       tim_allens_spectre()
     elsif answer == "2"
-      puts "As you approach the alluring smells, a lanky figure cloaked in shadow emerges from the make-shift tent. 'How dare you', says an eerie, child-like voice crackling in-and-out of falsetto. 'How dare you intruupt my sauteed human hand buffet.' The figure steps into the moonlight and tosses a roasted human hand at your feet. 'No one intruupts Emo Phillips as he dines!' He pulls up his lanky arm, points at you and howls in a terrifying ear-piercing shriek."
-      # battle()  how call battle
+      puts "As you approach the alluring smells, a lanky figure cloaked in shadow emerges from the make-shift tent. 'How dare you', says an eerie, child-like voice crackling in-and-out of falsetto. 'How dare you interupt my sauteed human hand buffet.' The figure steps into the moonlight and tosses a roasted human hand at your feet. 'No one interupts Emo Phillips as he dines!' He pulls up his lanky arm, points at you and howls in a terrifying ear-piercing shriek."
+      battle = Battle.new(@player, @emo_phillips)
+      tim_allens_spectre()
     elsif answer == "3"
+      puts "A lanky figure cloaked in shadow emerges from the make-shift tent immediately after you speak. 'How dare you', says an eerie, child-like voice crackling in-and-out of falsetto. 'How dare you interupt my dinner.' The figure steps into the moonlight and tosses a roasted human hand at your feet. 'No one interupts Emo Phillips as he dines!' He pulls up his lanky arm, points at you and howls in a terrifying ear-piercing shriek."
+      battle = Battle.new(@player, @emo_phillips)
+      tim_allens_spectre()
+    elsif answer == "4"
       puts "You punch yourself in the face. A true Comedy Slayer must never rest on the laurels of indecision. In order to take down the Illuminati of Laughter, one must never sit idle."
       puts ""
       puts "You take 2 Hit Points of damage."
+      @player.health -= 2
+      puts "You have #{@player.health} hit points left."
       alley()
-      # @player.health -= 2 how to affect player
     else
       puts "You punch yourself in the face twice. A true Comedy Slayer must never rest on the laurels of indecision. In order to take down the Illuminati of Laughter, one must never sit idle."
       puts ""
       puts "You take 2 Hit Points of damage."
+      @player.health -= 2
+      puts "You have #{@player.health} hit points left."
       alley()
       # @player.health -= 3 how to affect player
     end
