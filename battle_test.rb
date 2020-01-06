@@ -9,8 +9,10 @@ class Battle
   end
 
   def player_attack
+    damage_range_variable = @player.damage
+    damage_range = rand(1..damage_range_variable)
     @player.attack(@enemy)
-    puts "You charge and slash your foe directly in the face for #{@player.damage} hit points of damage."
+    puts "You charge and slash your foe directly in the face for #{damage_range} hit points of damage."
     puts ""
     puts "Your foe has been reduced to #{@enemy.health} hit points. God Speed, Comedian Slayer."
     if @enemy.alive?
@@ -108,8 +110,8 @@ class Player
   end
 end
 
-emo_phillips = Enemy.new("Emo Phillips", 8, 3)
-player = Player.new('Player', 25, 3)
+emo_phillips = Enemy.new("Emo Phillips", 8, rand(1..10))
+player = Player.new('Player', 25, 10)
 #
 # emo_phillips.attack(player)
 # player.attack(emo_phillips)

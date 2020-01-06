@@ -8,8 +8,10 @@ class Battle
   end
 
   def player_attack
+    damage_range_variable = @player.damage
+    damage_range = rand(1..damage_range_variable)
     @player.attack(@enemy)
-    puts "You charge and slash your foe directly in the face for #{@player.damage} hit points of damage."
+    puts "You charge and slash your foe directly in the face for #{damage_range} hit points of damage."
     puts ""
     puts "Your foe has been reduced to #{@enemy.health} hit points. God Speed, Comedian Slayer."
     if @enemy.alive?
@@ -33,7 +35,6 @@ class Battle
       puts "have died."
       # determine how to call back into the current locations
     end
-
   end
 
   def initiative

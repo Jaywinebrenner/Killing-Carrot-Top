@@ -112,13 +112,13 @@ class Game
 end
 
 # newGame = Intro.new
-emo_phillips = Enemy.new("Emo Phillips", 8, 3)
-tim_allen = Enemy.new("Tim Allen", 10, 4)
-judy_tenuta = Enemy.new("Judy Tenuta", 12, 4)
-gallagher = Enemy.new("Gallagher", 12, 6)
-jeff_foxworthy = Enemy.new("Jeff Foxworthy", 8, 6)
-howie_mandell = Enemy.new("Howie Mandell", 15, 3)
-carrot_top = Enemy.new("Carrot Top, Lord of Laughter", 25, 7)
+emo_phillips = Enemy.new("Emo Phillips", 8, rand(1..5))
+tim_allen = Enemy.new("Tim Allen", 10, rand(2..6))
+judy_tenuta = Enemy.new("Judy Tenuta", 12, rand(2..7))
+gallagher = Enemy.new("Gallagher", 12, rand(1..10))
+jeff_foxworthy = Enemy.new("Jeff Foxworthy", 8, rand(1..5))
+howie_mandell = Enemy.new("Howie Mandell", 15, rand(2..8))
+carrot_top = Enemy.new("Carrot Top, Lord of Laughter", 25, rand(2..12))
 
 beginingLocation = Location.new(nil)
 
