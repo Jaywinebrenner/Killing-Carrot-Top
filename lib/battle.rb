@@ -41,7 +41,6 @@ class Battle
     roll = rand(1..20)
     puts ""
     puts "1 - Attack"
-    puts ""
     puts "2 - Run"
     puts ""
     initiative_answer = gets.chomp
@@ -56,9 +55,11 @@ class Battle
     elsif initiative_answer == "1"
       if roll > 10
         puts "You are quick on your feet and attack first..."
+        puts ""
         player_attack()
       else
         puts "Your foe has gotten best of you and attacks first.."
+        puts ""
         enemy_attack()
       end
     end

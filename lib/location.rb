@@ -41,7 +41,6 @@ class Location
       @player.health -= 2
       puts "You have #{@player.health} hit points left."
       alley()
-      # @player.health -= 3 how to affect player
     end
 
 
@@ -98,7 +97,7 @@ class Location
       puts "You punch yourself in the face. A true Comedy Slayer must never rest on the laurels of indecision. In order to take down the Illuminati of Laughter, one must never sit idle."
       puts ""
       puts "You take 2 Hit Points of damage."
-      # @player.health -= 2
+      @player.health -= 2
     end
   end
 
